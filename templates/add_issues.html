@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<h1>Dashboard</h1> 
+	<h1><small>Welcome {{session.roll_no}}</small></h1>
+	<h2>Select your group to add query</h2>
+	<hr>
+	<table class="table table-striped text-center">
+		<tr>
+			<th>Hostel ID</th>
+		</tr>
+		{% for i in ids %}
+			<tr>
+				<td><a href="/add_issues/{{i.hostel_id}}" id="link-btn" class="btn btn-outline-success">{{i.hostel_id}}</a></td>
+				
+			</tr>
+		{% endfor %}	
+	</table>
+	<hr>
+{% endblock %}

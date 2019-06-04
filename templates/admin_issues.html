@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<center><h1>Issues</h1></center>
+	<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" title="Search" class="form-control mr-sm-2" style="padding-top:10px;margin-bottom: 10px">
+	<table class="table table-light table-bordered table-hover text-center" id="myTable">
+		<thead class="thead-dark">	
+		<tr>
+			<th>Title</th>
+			<th>Author</th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+		{% for issue in issues %}
+			<tr>
+				<td>
+					<a href="/admin_see_issue/{{issue.id}}">{{issue.title}}</a>
+				</td>
+				<td>
+					{{issue.author}}
+				</td>
+
+			</tr>
+		{% endfor %}
+	</table>
+	<script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+	
+{% endblock %}	

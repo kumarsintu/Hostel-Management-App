@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<center><h1>Dashboard</h1></center> 
+	<center><h1><small>Welcome {{session.roll_no}}</small></h1></center>
+	<h2>Select the Group to Join</h2>
+	<hr>
+	<table class="table table-light table-bordered table-hover text-center">
+		<thead class="thead-dark">	
+		<tr>
+			<th>Hostel ID</th>
+			<th>Hostel Name</th>
+		</tr>
+	</thead>
+		{% for i in hostels %}
+			<tr>
+				<td><a href="/pending/{{i.hostel_id}}" id="link-btn" class="btn btn-outline-success">{{i.hostel_id}}</a></td>
+				<td>{{i.hostel_name}}</td>
+			</tr>
+		{% endfor %}
+	</table>
+	<hr>
+{% endblock %}

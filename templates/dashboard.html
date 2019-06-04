@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<h1>User Dashboard</h1>
+	<hr>
+	<h2><small>Welcome {{session.roll_no}}</small></h2>
+	<a class="btn btn-success" href="/add_article">Add Article</a>
+	<br>
+	<br>
+	<a href="/hostel_info" style="width:300px" class="btn btn-outline-info btn-lg">Join Groups</a>
+	<br>
+	<br>
+	<a href="/choose_group" style="width:300px" class="btn btn-outline-info btn-lg">Add issue to your Groups</a>
+	<br>
+	<br>
+	<a href="/choose_group2" style="width:300px" class="btn btn-outline-info btn-lg">Check issues of your Groups</a>
+	<br>
+	<br>
+	<table class="table table-bordered table-light table-hover text-center">
+	<thead class="thead-dark">	
+		<tr>
+			<th>ID</th>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Date</th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+		{% for article in articles %}
+			<tr>
+				<td>{{article.id}}</td>
+				<td>{{article.title}}</td>
+				<td>{{article.author}}</td>
+				<td>{{article.create_date}}</td>
+				<td><a href="edit_article/{{article.id}}" class="btn btn-default pull-right">Edit</a></td>
+				<td>
+					<form action="{{url_for('delete_article',id=article.id)}}" method="post">
+						<input type="hidden" name="_method" value="DELETE">
+						<input type="submit" value="Delete" class="btn btn-danger">
+					</form>
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+	{% endblock %}	

@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<center><h1>Add event</h1></center>
+	{% from "includes/_formhelpers.html" import render_field %}
+	<form method="POST" action="">
+		<div class="form-group">
+			{{ render_field(form.hid, class_="form-control") }}
+		</div>
+		<div class="form-group">
+			{{ render_field(form.title, class_="form-control") }}
+		</div>
+		<div class="form-group">
+			{{ render_field(form.details, class_="form-control",id="editor") }}
+		</div>
+		<div class="form-group">
+			{{ render_field(form.org_date, class_="form-control") }}
+		</div>
+		<div class="form-group">
+			{{ render_field(form.location, class_="form-control") }}
+		</div>
+		<div class="form-group">
+			{{ render_field(form.img_link, class_="form-control") }}
+		</div>	
+		<center><input class="btn btn-primary" type="submit" value="Submit"></center>
+	</form>
+{% endblock %}	 

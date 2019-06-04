@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<br>
+<div class="page-header"><h1> Upcoming Events</h1> </div>
+<hr>
+<br>
+  	{% for i in temp %}
+  	<div class="jumbotron">
+  <div class="media mt-3">
+      <img src="{{i.img_link}}"" class="align-self-center mr-3 img-thumbnail img-responsive" style="width:500px;height:400px">
+    <div class="media-body">
+    <h3>TITLE:</h3>	
+      <h4>{{i.title}}</h4>
+    <h3>DETAILS:</h3>  
+      <p>{{i.details | safe}}</p>
+     <h3>ORGANISING DATE:</h3> 
+      <p>{{i.org_date}}</p>
+    <h3>LOCATION:</h3>  
+      <p>{{i.location}}</p>
+    </div>
+   </div>
+</div>
+    {% endfor %}
+{% endblock %}

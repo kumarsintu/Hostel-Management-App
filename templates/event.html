@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <center><h1>Upcoming Events</h1></center>
+  <table class="table table-bordered table-light table-hover text-center">
+  	<thead class="thead-dark">	
+		<tr>
+			<th></th>
+			<th><h2><strong>TITLE</strong></h2></th>
+			<th><h2><strong>DETAILS</strong></h2></th>
+			<th><h2><strong>ORGANISING DATE</strong></h2></th>
+			<th><h2><strong>LOCATION</strong></h2></th>
+		</tr>
+	</thead>
+		{% for i in students %}
+			<tr>
+				<td><img src="{{i.img_link}}"></td>
+				<td>{{i.title}}</td>
+				<td>{{i.details}}</td>
+				<td>{{i.org_date}}</td>
+				<td>{{i.location}}</td>
+			</tr>
+		{% endfor %}
+	</table>
+{% endblock %}

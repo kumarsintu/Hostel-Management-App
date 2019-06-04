@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<br>
+<br>
+	<table class="table table-bordered table-light table-hover text-center">
+		<thead class="thead-dark">	
+		<tr>
+			<th>Hostel ID</th>
+			<th>Hostel Name</th>
+		</tr>
+	</thead>
+		{% for i in hostels %}
+			<tr>
+				<td><a href="/see_events/{{i.hostel_id}}" id="link-btn" class="btn btn-outline-success">{{i.hostel_id}}</a></td>
+				<td>{{i.hostel_name}}</td>
+			</tr>
+		{% endfor %}
+	</table>
+	<hr>
+{% endblock %}

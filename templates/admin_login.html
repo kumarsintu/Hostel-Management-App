@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <br>
+  <br>
+  <br>
+  <br>
+<div class="container">
+	<div class="jumbotron">
+	<h1 align="center">Admin Login</h1>
+		<form action="" method="POST" class="form-signin">
+		<div class="form-group">
+			<label>Admin Email</label>
+			<input type="text" name="admin_email" class="form-control" value="{{request.form.admin_email}}">
+		</div>
+		<div class="form-group">
+			<label>Admin Password</label>
+			<input type="password" name="admin_password" class="form-control" value="{{request.form.admin_password}}">
+		</div>
+		<button type="submit" class="btn btn-lg btn-outline-dark btn-block">LOG IN</button>
+	</form>
+	</div>
+	<footer class="footer">
+        <p>&copy; Vivek Chandela,IIIT Hyderabad</p>
+      </footer>
+    </div>
+{% endblock %}			
