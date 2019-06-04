@@ -1,5 +1,5 @@
 # Hostel-Management-App
-* A hostel management app using Flask, HTML and CSS.
+* A hostel management app using python, Flask, HTML and CSS.
 
 ## Features:
 * Login and Register options.
